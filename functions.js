@@ -6,4 +6,11 @@ function capitalize(str) {
     return newStr;
 };
 
-export {capitalize};
+function reverseString(str) {
+    const splitString = str.split("");
+    const reversed = splitString.reverse();
+    const reversedString = reversed.join("");
+    return reversedString;
+}
+
+export {capitalize, reverseString};
