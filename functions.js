@@ -37,12 +37,24 @@ function caesarCipher(str, shift) {
     const stringArray = str.split("");
 
     for (let i = 0; i < stringArray.length; i++) {
+        let origUp = false;
+        if (stringArray[i] === stringArray[i].toUpperCase()) {
+            origUp = true;
+            stringArray[i] = stringArray[i].toLowerCase();
+        } else {
+            origUp = false;
+        }
         let index = alphabetArray.indexOf(stringArray[i]);
         let newIndex = index + shift;
         if (newIndex > 25) {
             newIndex = newIndex - 26;
         }
-        stringArray[i] = alphabetArray[newIndex];
+        if (origUp) {
+            stringArray[i] = alphabetArray[newIndex].toUpperCase();
+        } else {
+            stringArray[i] = alphabetArray[newIndex];
+        }
+        
     }
     const newString = stringArray.join("");
     return newString;

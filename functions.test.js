@@ -28,3 +28,7 @@ test("Division", () => {
 test("Shift string", () => {
     expect(caesarCipher("abc", 3)).toBe("def");
 })
+
+test("Keep caps", () => {
+    expect(caesarCipher("aBc", 3)).toBe("dEf");
+})
