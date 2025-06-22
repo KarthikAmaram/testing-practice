@@ -31,4 +31,21 @@ class Calculator {
     }
 }
 
-export {capitalize, reverseString, Calculator};
+function caesarCipher(str, shift) {
+    const alphabetString = "abcdefghijklmnopqrstuvwxyz";
+    const alphabetArray = alphabetString.split("");
+    const stringArray = str.split("");
+
+    for (let i = 0; i < stringArray.length; i++) {
+        let index = alphabetArray.indexOf(stringArray[i]);
+        let newIndex = index + shift;
+        if (newIndex > 25) {
+            newIndex = newIndex - 26;
+        }
+        stringArray[i] = alphabetArray[newIndex];
+    }
+    const newString = stringArray.join("");
+    return newString;
+}
+
+export {capitalize, reverseString, Calculator, caesarCipher};

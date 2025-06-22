@@ -1,4 +1,4 @@
-import {capitalize, reverseString, Calculator} from "./functions.js"
+import {capitalize, reverseString, Calculator, caesarCipher} from "./functions.js"
 const calculator = new Calculator();
 
 test("Capitalizes first letter in string", () => {
@@ -23,4 +23,8 @@ test("Multiplication", () => {
 
 test("Division", () => {
     expect(calculator.divide(10, 2)).toBe(5);
+})
+
+test("Shift string", () => {
+    expect(caesarCipher("abc", 3)).toBe("def");
 })
