@@ -45,6 +45,9 @@ function caesarCipher(str, shift) {
             origUp = false;
         }
         let index = alphabetArray.indexOf(stringArray[i]);
+        if (index === -1) {
+            continue
+        }
         let newIndex = index + shift;
         if (newIndex > 25) {
             newIndex = newIndex - 26;

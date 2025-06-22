@@ -32,3 +32,7 @@ test("Shift string", () => {
 test("Keep caps", () => {
     expect(caesarCipher("aBc", 3)).toBe("dEf");
 })
+
+test("Doesn't change punctuation", () => {
+    expect(caesarCipher("Hello, World!", 5)).toBe("Mjqqt, Btwqi!")
+})
