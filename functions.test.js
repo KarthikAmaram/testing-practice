@@ -1,5 +1,6 @@
-import {capitalize, reverseString, Calculator, caesarCipher} from "./functions.js"
+import {capitalize, reverseString, Calculator, caesarCipher, anaylzeArray} from "./functions.js"
 const calculator = new Calculator();
+let array = [1,8,3,4,2,6]
 
 test("Capitalizes first letter in string", () => {
     expect(capitalize("big gray elephant")).toBe("Big gray elephant");
@@ -34,5 +35,21 @@ test("Keep caps", () => {
 })
 
 test("Doesn't change punctuation", () => {
-    expect(caesarCipher("Hello, World!", 5)).toBe("Mjqqt, Btwqi!")
+    expect(caesarCipher("Hello, World!", 5)).toBe("Mjqqt, Btwqi!");
+})
+
+test("Average", () => {
+    expect(anaylzeArray(array).average).toBe(4);
+})
+
+test("Minimum", () => {
+    expect(anaylzeArray(array).min).toBe(1);
+})
+
+test("Maximum", () => {
+    expect(anaylzeArray(array).max).toBe(8);
+})
+
+test("Length", () => {
+    expect(anaylzeArray(array).length).toBe(6);
 })

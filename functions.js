@@ -63,4 +63,23 @@ function caesarCipher(str, shift) {
     return newString;
 }
 
-export {capitalize, reverseString, Calculator, caesarCipher};
+function anaylzeArray(array) {
+    const maximum = Math.max(...array);
+    const minimum = Math.min(...array);
+    const arrayLength = array.length;
+    let averageVal = 0;
+    for (let i = 0; i < array.length; i++) {
+        averageVal += array[i];
+    }
+    averageVal = averageVal/arrayLength;
+
+    const finalObject = {
+        average: averageVal,
+        min: minimum,
+        max: maximum,
+        length: arrayLength
+    }
+    return finalObject;
+}
+
+export {capitalize, reverseString, Calculator, caesarCipher, anaylzeArray};
